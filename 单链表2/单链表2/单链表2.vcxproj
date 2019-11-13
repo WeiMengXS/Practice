@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5804863D-F522-4002-B070-D4C5396438B3}</ProjectGuid>
+    <ProjectGuid>{7E407BC6-DDFD-4630-9201-53F4C4F69696}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>数字出现一次</RootNamespace>
+    <RootNamespace>单链表2</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
