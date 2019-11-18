@@ -1,0 +1,38 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+
+typedef struct ListNode Node;
+struct ListNode* deleteDuplicates(struct ListNode* head){
+if(head==NULL)
+{return head;}
+Node* n1=head;
+Node* n2=n1->next;
+while(n1&&n2)
+
+{
+ {
+    while(n1->val==n2->val)
+    {
+        n2=n2->next;
+        if(!n2)
+        {break;}
+    }
+   
+ }
+
+n1->next=n2;
+n1=n2;
+if(n2)
+{
+n2=n2->next;
+}
+
+    }
+return head;
+
+}
