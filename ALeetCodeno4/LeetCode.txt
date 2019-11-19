@@ -1,0 +1,70 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+
+typedef struct ListNode Node;
+bool isPalindrome(struct ListNode* head){
+    if(head==NULL||head->next==NULL)
+    {return true;}
+Node* tail=head;
+Node*prve=head;
+Node*n1=NULL;
+Node*n2=NULL;
+while(prve&&prve->next)
+{
+    n1=tail;
+    tail=tail->next;
+    prve=prve->next->next;
+    n1->next=n2;
+    n2=n1;
+}
+
+if(prve==NULL)
+    
+{
+    while(tail){
+    if(tail->val==n1->val)
+    {tail=tail->next;
+    n1=n1->next;}
+else
+{break;}
+    }
+    if(tail)
+    {return false;}
+    else
+    return true;
+}
+else
+{tail=tail->next;
+ 
+   /* printf("%d",n1->val);
+    printf("%d",n1->next->val);
+    printf("%d",tail->val);
+
+    printf("%d",tail->next->val);
+*/
+    {
+    while(tail){
+    if(tail->val==n1->val)
+    {tail=tail->next;
+    n1=n1->next;}
+else
+{break;
+
+}
+    }
+    if(tail)
+    {
+        return false;
+        }
+    else
+    {
+    return true;}
+}
+}
+}
+
