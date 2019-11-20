@@ -1,0 +1,86 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+
+typedef struct ListNode Node;
+struct ListNode* swapPairs(struct ListNode* head){
+    if(head==NULL||head->next==NULL)
+    {return head;}
+Node* tail=head;
+Node* prve=head->next;
+Node* newnode1=(Node*)malloc(sizeof(Node));
+newnode1->next=NULL;
+Node* node1=newnode1;
+Node* newnode2=(Node*)malloc(sizeof(Node));
+newnode2->next=NULL;
+Node* node2=newnode2;
+while(tail)
+{
+node1->next=tail;
+node2->next=prve;
+if(tail->next==NULL)
+{break;}
+else if(tail->next!=NULL)
+{
+tail=tail->next->next;
+}
+
+
+
+if(prve&&prve->next){
+prve=prve->next->next;
+
+}
+node1=node1->next;
+node2=node2->next;
+
+
+}
+
+if(tail&&tail->next==NULL)
+{node1=node1->next;
+node2=node2->next;}
+
+node1->next=NULL;
+
+
+
+
+node2=newnode2->next;
+node1=newnode1->next;
+Node* n1=(Node*)malloc(sizeof(Node));
+n1->next=NULL;
+Node*cur=n1;;
+
+
+
+while(node1&&node2)
+{
+
+Node* next2=node2->next;
+Node*next1=node1->next;
+cur->next=node2;// 2 4
+
+node2=next2; 
+cur=cur->next;
+
+cur->next=node1;  
+printf("%d\n",cur->next->val);
+cur=cur->next;
+
+node1=next1; 
+
+
+
+
+}
+cur=n1->next;
+return cur;
+
+
+
+}
